@@ -1,0 +1,45 @@
+PROCEDURE p_INSERTION_sort(n : INTEGER, tab : ARRAY_OF INTEGER)
+VAR
+    i,j,key : INTEGER;
+BEGIN
+    // Traverse through 1 to lenght(tab)
+    FOR i FROM 1 TO n-1 STEP step  DO
+        key := tab[i];
+        // Move elements of tab[0..i-1] that are greater than key
+        // to one position ahead of their current position
+        j := i - 1;
+        WHILE (j >= 0) AND (key < tab[j]) DO
+            tab[j + 1] := tab[j];
+            j := j - 1;
+        END_WHILE
+        arr[j + 1] := key;
+    END_FOR
+END
+
+ALGORITHM insertion sort
+VAR
+    //variable declaration
+    i,n : INTEGER;
+    v : array_name : ARRAY_OF INTEGER [50];
+
+BEGIN
+
+    REPEAT
+        write("type the length of array.");
+        read (n);
+    UNTIL (n > 0)
+
+    // filling the array
+    FOR i FROM 0 TO n-1 DO
+        write("type the value of",i);
+        read (v[i]);
+    END_FOR
+
+    procedure p_insertion_sort(n,v);  // calling the procedure
+
+    // display the new array
+    FOR i FROM 0 TO n-1 DO
+        write (v[i]);
+    END_FOR
+
+END
